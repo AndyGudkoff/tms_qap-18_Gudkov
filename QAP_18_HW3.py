@@ -52,3 +52,13 @@ print(delete_empty_spaces_inside_list(str_with_space))
 
 school = {"1a": 15, "1б": 11, "1в": 4, "2a": 9, "2б": 12, "2в": 1, "2г": 18, "3а": 24, "3б": 27,
           "4а": 22, "4в": 21, "4г": 30}
+
+# 7 Создайте список и извлеките из него списка второй элемент.
+list_to_grab_second_element = [5, 2, 15, 19, 18]
+
+
+def take_second_el_from_list(list):
+    return list[1]
+
+
+print(take_second_el_from_list(list_to_grab_second_element))
