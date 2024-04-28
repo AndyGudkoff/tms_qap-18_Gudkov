@@ -16,3 +16,12 @@ def replace_sharp_by_slash(site):
 
 
 print(replace_sharp_by_slash(str_my_site))
+
+# 3 Напишите программу, которая добавляет ‘ing’ к слову ‘stroka’
+
+
+def str_plus_ing(string):
+    return string + "ing"
+
+
+print(str_plus_ing('zxcv'))
