@@ -25,3 +25,15 @@ def str_plus_ing(string):
 
 
 print(str_plus_ing('zxcv'))
+
+# 4 В строке “Ivanou Ivan” поменяйте местами слова => "Ivan Ivanou"
+str_ivanou_ivan = 'Ivanou Ivan'
+
+
+def replace_name_and_surname_place(name_surname):
+    str_to_list = (name_surname.split())
+    name_surname = str_to_list[1] + ' ' + str_to_list[0]
+    return name_surname
+
+
+print(replace_name_and_surname_place(str_ivanou_ivan))
