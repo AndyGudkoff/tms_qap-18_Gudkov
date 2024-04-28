@@ -79,3 +79,19 @@ print(if_str1_in_str2(stroka_to_compare_first,stroka_to_compare_second))
 x = "My name is Agent Smith"
 print(x[1])  # y
 print(x[3:16:3])  # nesgt
+
+
+# 10 Есть массив чисел. Известно, что каждое число в этом массиве имеет пару, кроме одного: [1, 5, 2, 9, 2, 9, 1] => 5
+# Напишите программу, которая будет выводить уникальное число
+
+
+list_to_find_lonely_element = [1, 5, 2, 9, 2, 9, 1, 5, 8]
+
+
+def find_lonely_element(listochek):
+    for el in listochek:
+        if listochek.count(el) < 2:
+            return el
+
+
+print(find_lonely_element(list_to_find_lonely_element))
