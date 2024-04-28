@@ -62,3 +62,14 @@ def take_second_el_from_list(list):
 
 
 print(take_second_el_from_list(list_to_grab_second_element))
+
+# 8 Вывести входит ли строка1 в строку2 (пример: employ и employment )
+stroka_to_compare_first = 'employ'
+stroka_to_compare_second = 'employment'
+
+
+def if_str1_in_str2(str1, str2):
+    return str1 in str2
+
+
+print(if_str1_in_str2(stroka_to_compare_first,stroka_to_compare_second))
