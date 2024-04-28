@@ -37,3 +37,14 @@ def replace_name_and_surname_place(name_surname):
 
 
 print(replace_name_and_surname_place(str_ivanou_ivan))
+
+# 5 Напишите программу которая удаляет пробел в начале, в конце строки
+str_with_space = "   qwerty     "
+
+
+def delete_empty_spaces_inside_list (list):
+    return list.strip(' ')
+
+print(delete_empty_spaces_inside_list(str_with_space))
+
+
