@@ -73,3 +73,9 @@ def if_str1_in_str2(str1, str2):
 
 
 print(if_str1_in_str2(stroka_to_compare_first,stroka_to_compare_second))
+
+# 9 Вывести нужные символы
+
+x = "My name is Agent Smith"
+print(x[1])  # y
+print(x[3:16:3])  # nesgt
