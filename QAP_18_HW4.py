@@ -52,3 +52,45 @@ print(test_tring.find('w'))
 print(test_tring.count('l'))
 print((test_tring[0:5]) == 'Hello')
 print((test_tring[9:12]) == 'qwe')
+
+
+# Списки:
+# 1. Создайте два любых списка и свяжите их с переменными.
+listochek = [1, 5, 9, 10]
+listochek1 = [2, 10, 15, 20]
+
+# 2. Извлеките из первого списка второй элемент.
+print(listochek[0])
+
+# 3. Измените во втором списке последний элемент. Выведите список на экран.
+print(listochek1[len(listochek1) - 1])  # Output of the Current last element
+listochek1[len(listochek1) - 1] = 44
+print(listochek1[len(listochek1) - 1])  # Output of the last element after change.
+
+# 4. Соедините оба списка в один, присвоив результат новой переменной. Выведите получившийся список на экран.
+concat_of_two_lists = listochek + listochek1
+print(concat_of_two_lists)
+
+# 5. "Снимите" срез из соединенного списка так, чтобы туда попали некоторые части обоих первых списков.
+# Срез свяжите с очередной новой переменной. Выведите значение этой переменной.
+new_list_with_parts_of_two_lists = concat_of_two_lists[2:6]
+print(new_list_with_parts_of_two_lists)
+
+# 6. Добавьте в список два новых элемента и снова выведите его.
+concat_of_two_lists += 2, 10
+print(concat_of_two_lists)
+
+# 7. Даны списки:
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# Нужно вернуть список, который состоит из элементов, общих для этих двух списков. -- !не использовать циклы
+first_list = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+second_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+result_with_common_element_of_first_and_second_lists = list(set(first_list) & set(second_list))
+print(result_with_common_element_of_first_and_second_lists)
+
+# 8. Есть список: [1, 2, 3, 4, 3, 2, 5, 1, 4, 6, 7, 1, 8, 2, 3] оставить в нем только уникальные значения.
+# !не использовать циклы
+list_with_non_unique_values = [1, 2, 3, 4, 3, 2, 5, 1, 4, 6, 7, 1, 8, 2, 3]
+print(list(set(list_with_non_unique_values)))
+
