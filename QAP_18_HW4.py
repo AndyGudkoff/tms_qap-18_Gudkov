@@ -431,3 +431,77 @@ def find_lonely_el(listochek):
 
 
 find_lonely_el(massiv)
+
+
+# Цикл while
+# 1. Дано число N. Найти произведение всех чисел от 0 до N.
+
+def proizvidenie_chisel(N):
+    i = 1
+    result_proizv = 1
+    while i <= N:
+        result_proizv *= i
+        i += 1
+    return result_proizv
+
+
+print(proizvidenie_chisel(5))
+
+
+# 2. Поле засеяли цветами двух сортов на площади S1 и S2. Каждый год
+# площадь цветов первого сорта увеличивается вдвое, а площадь второго сорта увеличивается втрое.
+# Через сколько лет площадь первых сортов будет составлять меньше 10% от площади вторых сортов.
+
+
+def calculate_years(S1, S2):
+
+    years = 0
+    while S1 / S2 >= 0.1:
+        S1 *= 2
+        S2 *= 3
+        years += 1
+    return years
+
+
+print(calculate_years(1,10))
+
+# 3. Дано целое число N (>0). Используя операции деления нацело и взятия остатка от деления,
+# найти количество и сумму его цифр.
+
+
+def calculate_digits(N):
+
+    digit_count = 0
+    digit_sum = 0
+
+    while N > 0:
+        digit = N % 10
+
+        digit_count += 1
+        digit_sum += digit
+
+        N //= 10
+
+    return digit_count, digit_sum
+
+
+print(calculate_digits(12345))
+
+
+
+# 4. Деду M лет, а внуку N лет. Через сколько лет дед станет вдвое старше внука.
+# И сколько при этом лет будет деду и внуку.
+
+
+def calculate_years(grandfather_age, grandson_age):
+    years = 0
+    while grandfather_age <= 2 * grandson_age:
+        grandfather_age += 1
+        grandson_age += 1
+        years += 1
+
+    # Return the number of years it will take, the grandfather's age at that time, and the grandson's age at that time
+    return years, grandfather_age, grandson_age
+
+
+print(calculate_years(50, 15))
