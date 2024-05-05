@@ -1,3 +1,9 @@
+import re
+
+
+from collections import Counter
+
+
 # Работа с переменными:
 # 1. Переменной var_int присвойте значение 10, var_float - значение 8.4, var_str - "No". 2. Измените значение,
 # хранимое в переменной var_int, увеличив его в 3.5 раза, результат свяжите с переменной big_int.
@@ -149,3 +155,98 @@ del school["1a"]    # Deleting 1a class
 
 # 4. Выведите содержимое словаря на экран.
 print(school)
+
+
+# Преобразование типов
+# 1. Перевести строку в массив
+# "Robin Singh" => ["Robin”, “Singh"]
+# "I love arrays they are my favorite" => ["I", "love", "arrays", "they", "are", "my", "favorite"]
+robin_singh = "Robin Singh"
+arr_robin_singh = robin_singh.split(' ')
+print(arr_robin_singh)
+
+love_array = "I love arrays they are my favorite"
+arr_love_array = love_array.split(' ')
+print(arr_love_array)
+
+# 2. Дан список: [‘Ivan’, ‘Ivanou’], и 2 строки: Minsk, Belarus
+# Напечатайте текст: “Привет, Ivan Ivanou! Добро пожаловать в Minsk Belarus”
+list_ivan_ivanou = ["Ivan", "Ivanou"]
+lovely_city = "Minsk"
+lovely_country = "Belarus"
+print(f'Привет, {list_ivan_ivanou[0]} {list_ivan_ivanou[1]}! Добро пожаловать в {lovely_city} {lovely_country}')
+
+# 3. Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"]
+# сделайте из него строку => "I love arrays they are my favorite"
+list_i_love_arrays = ["I", "love", "arrays", "they", "are", "my", "favorite"]
+print(' '.join(list_i_love_arrays))
+
+# 4. Создайте список из 10 элементов, вставьте на 3-ю позицию новое значение,
+# удалите элемент из списка под индексом 6
+list_with_10_elements = [1, 5, 15, 25, 30, 35, 40, 45, 50, 55]
+list_with_10_elements[2] = 20
+del list_with_10_elements[6]
+print(list_with_10_elements)
+
+# 5. Есть 2 словаря
+# a = { 'a': 1, 'b': 2, 'c': 3} b = { 'c': 3, 'd': 4,'e': 5}
+# Необходимо их объединить по ключам, а значения ключей поместить в список,# если у одного словаря есть ключ "а",
+# а у другого нету, то поставить значение None на соответствующую
+# # позицию(1-я позиция для 1-ого словаря, вторая для 2-ого)
+# ab = {'a': [1, None], 'b': [2, None], 'c': [3, 3], 'd': [None, 4], 'e': [None, 5]}
+a = {'a': 1, 'b': 2, 'c': 3}
+b = {'c': 3, 'd': 4, 'e': 5}
+list_of_keys = list(a) + list(b)
+print(list_of_keys)
+ab = {}
+keys = set(a.keys()).union(b.keys())
+for key in keys:
+    values = [a.get(key), b.get(key)]
+    ab[key] = values
+
+print(ab)
+
+# *1) Вам передан массив чисел. Известно, что каждое число в этом массиве имеет пару,
+# кроме одного: [1, 5, 2, 9, 2, 9, 1] => 5
+# Напишите программу, которая будет выводить уникальное число
+arr_with_non_unique_values = [1, 5, 2, 9, 2, 9, 1]
+
+
+def find_unique_element_in_list (listxczvvz):
+    for el in listxczvvz:
+        if listxczvvz.count(el) < 2:
+            return el
+    print('No unique element was founded')
+find_unique_element_in_list(arr_with_non_unique_values)
+
+
+# *2) Дан текст, который содержит различные английские буквы и знаки препинания.
+# Вам необходимо найти самую частую букву в тексте. Результатом должна быть буква в нижнем регистре.
+# При поиске самой частой буквы, регистр не имеет значения, так что при подсчете считайте,
+# что "A" == "a". Убедитесь, что вы не считайте знаки препинания, цифры и пробелы, а только буквы.
+# Если в тексте две и больше буквы с одинаковой частотой, тогда результатом будет буква,
+# которая идет первой в алфавите. Для примера, "one" содержит "o", "n", "e" по одному разу, так что мы выбираем "e".
+# "a-z" == "a"
+# "Hello World!" == "l"
+# "How do you do?" == "o" "One" == "e"
+# "Oops!" == "o"
+# "AAaooo!!!!" == "a"
+# "a" * 9000 + "b" * 1000 == "a"
+
+zxcv = "a" * 9000 + "b" * 1000
+
+
+def most_common_letter(textzcxvzx):
+    # Преобразовать текст в нижний регистр
+    textzcxvzx = textzcxvzx.lower()
+    # Отфильтровать только буквы
+    letters = re.findall('[a-z]', textzcxvzx)
+    # Подсчитать частоту каждой буквы
+    letter_counts = Counter(letters)
+    # Найти наиболее частую букву
+    most_common = max(letter_counts, key=letter_counts.get)
+    most_common = min(most_common)
+
+    return most_common
+
+print(most_common_letter(zxcv))
