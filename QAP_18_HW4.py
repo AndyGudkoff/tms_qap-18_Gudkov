@@ -250,3 +250,96 @@ def most_common_letter(textzcxvzx):
     return most_common
 
 print(most_common_letter(zxcv))
+
+# Условия
+# 1. Дано целое число. Если оно является положительным, то прибавить к нему 1;
+# в противном случае не изменять его. Вывести полученное число.
+
+
+def check_if_number_pos_or_negative (number) -> int:
+    if(number>0):
+        number += 1
+        return number
+    else:
+        return number
+print(check_if_number_pos_or_negative(-1))
+
+# 2. Даны три целых числа. Найти количество положительных чисел в исходном наборе.
+first = -1
+second = -1
+third = -5
+counter = 0
+listfromnumbers = [first, second, third]
+
+for el in listfromnumbers:
+    if el > 0:
+        counter += 1
+print(counter)
+
+
+# 3. Дан номер года (положительное целое число). Определить количество дней в этом году, учитывая,
+# что обычный год насчитывает 365 дней, а високосный — 366 дней. Високосным считается год,
+# делящийся на 4, за исключением тех годов, которые делятся на 100 и не делятся на 400
+# (например, годы 300, 1300 и 1900 не являются високосными, а 1200 и 2000 являются).
+
+
+def find_number_of_days_in_a_year(year):
+
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        number_of_days_in_year = 366
+        return number_of_days_in_year
+    else:
+        number_of_days_in_year = 365
+        return number_of_days_in_year
+
+
+print(find_number_of_days_in_a_year(1200))
+
+# 4. Дано целое число в диапазоне 1–7. Вывести строку — название дня недели,
+# соответствующее данному числу (1 — «понедельник», 2 — «втор- ник» и т. д.).
+
+
+def find_day_name (number):
+    if number == 1:
+        return "понедельник"
+    elif number == 2:
+        return "вторник"
+    elif number == 3:
+        return "среда"
+    elif number == 4:
+        return "четверг"
+    elif number == 5:
+        return "пятница"
+    elif number == 6:
+        return "суббота"
+    elif number == 7:
+        return "воскресенье"
+    else:
+        return "Некорректный день"
+
+
+print(find_day_name(7))
+
+# 5. Единицы массы пронумерованы следующим образом:
+# 1 — килограмм, 2 — миллиграмм, 3 — грамм, 4 — тонна, 5 — центнер.
+# Дан номер едини- цы массы (целое число в диапазоне 1–5) и масса тела в этих единицах (вещественное число).
+# Найти массу тела в килограммах.
+
+
+def mass_converter(unit, mass):
+    if unit == 1:
+        return mass
+    elif unit == 2:
+        return mass / 1000000
+    elif unit == 3:
+        return mass / 1000
+    elif unit == 4:
+        return mass * 1000
+    elif unit == 5:
+        return mass * 100
+
+
+unit = 3
+mass = 10
+
+print(mass_converter(unit, mass))
