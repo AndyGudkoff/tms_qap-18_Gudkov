@@ -343,3 +343,91 @@ unit = 3
 mass = 10
 
 print(mass_converter(unit, mass))
+
+# Цикл for
+# 1. Даны два целых числа A и B (A < B). Найти сумму всех целых чисел от A до B включительно.
+
+
+def find_sum_if_two_number(A, B):
+    summa_elementos = 0
+    for el in range(A, B + 1):
+        summa_elementos += el
+    return summa_elementos
+
+
+print(find_sum_if_two_number(1, 10))
+
+# 2. Найти сумму всех натуральных чисел в от A до B
+
+
+def find_sum_of_all_integers_in_range(A, B):
+    summ_of_integer = 0
+    if A > B:
+        A,B = B, A
+    if A <= 0:
+        A = 1
+    if B <= 0:
+        return 0
+    for el in range(A, B+1):
+        summ_of_integer = B - A + 1
+        return summ_of_integer
+
+
+print(find_sum_of_all_integers_in_range(-5,10))
+
+
+
+# 3. Найти произведение положительных, сумму и количество отрицательных
+# из 10 введенных целых значений.
+
+
+def count_positive_and_negative():
+    positive_product = 1
+    negative_sum = 0
+    negative_count = 0
+
+    for el in range(10):
+        num = int(input("Enter Integer: "))
+        if num > 0:
+            positive_product *= num
+        elif num < 0:
+            negative_sum += num
+            negative_count += 1
+
+    return positive_product, negative_sum, negative_count
+
+print(count_positive_and_negative())
+
+
+# 4. Дан словарь пловцов с их результатами. Напечатать лучший результат заплыва среди 6 участников.
+# Бекиш Александр - 21,07
+# Будник Алексей - 20,34
+# Гребень Анастасия - 22,12 Давидович Татьяна - 30
+# Дешук Дмитрий - 24.01
+# Казак Анна - 28,17
+
+dict_with_swimmers = {"Бекиш Александр": 21.07, "Будник Алексей": 20.34, "Гребень Анастасия": 22.12,
+                      "Давидович Татьяна": 30, "Дешук Дмитрий": 24.01, "Казак Анна": 28.17}
+
+best_result = float(100000000000)
+
+for swimmer, result in dict_with_swimmers.items():
+    if result < best_result:
+        best_result = result
+
+print(best_result)
+
+# 5.   Есть массив чисел. Известно, что каждое число в этом массиве имеет пару,
+# кроме одного: [1, 5, 2, 9, 2, 9, 1] => 5. Напишите программу, которая будет выводить уникальное число
+# massiv = [1, 5, 2, 9, 2, 9, 1,]
+
+
+def find_lonely_el(listochek):
+    for el in listochek:
+        if listochek.count(el) < 2:
+            print(el)
+            return el
+    print("No lonely Element")
+
+
+find_lonely_el(massiv)
