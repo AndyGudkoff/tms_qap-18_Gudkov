@@ -121,3 +121,31 @@ print(str_for_complex_expression_one == str_for_complex_expression_two)
 print(str_for_complex_expression_one != str_for_complex_expression_two)
 print(type(str_for_complex_expression_one) == str and type(str_for_complex_expression_two) == set)
 print(str_for_complex_expression_one.isnumeric() or str_for_complex_expression_two.upper().isupper())
+
+
+# Словари:
+# 1. Создайте словарь, связав его с переменной school, и наполните его данными,
+# которые бы отражали количество учащихся в десяти разных классах (например, 1а, 1б, 2б, 6а, 7в и т.д.).
+school = {"1a": 24, "1b": 19, "1c": 5, "2a": 17, "2b": 14, "3a": 30, "3b": 32, "3v": 12, "4a": 18, "4b": 36}
+
+# 2. Узнайте сколько человек в каком-нибудь классе.
+print(school["3b"])
+
+# 3. Представьте, что в школе произошли изменения, внесите их в словарь:
+# ◦ в трех классах изменилось количество учащихся;
+# ◦ в школе появилось два новых класса;
+# ◦ в школе расформировали один из классов.
+print(school["1b"], school["3v"], school["4b"])  # Output before quantity of class members changed.
+school["1b"] = 44    # Change number of members of 1b class to 44
+school["3v"] = 35    # Change number of members of 3v class to 35
+school["4b"] = 11    # Change number of members of 4b class to 11
+print(school["1b"], school["3v"], school["4b"])   # Output after quantity of class members changed.
+
+school["5a"] = 40   # Adding new class
+school["5b"] = 41   # Adding new class
+print(school["5a"], school["5b"])  # Output of new classes
+
+del school["1a"]    # Deleting 1a class
+
+# 4. Выведите содержимое словаря на экран.
+print(school)
