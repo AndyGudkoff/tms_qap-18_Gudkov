@@ -21,4 +21,34 @@ print(big_int/var_float)
 var_str = var_str * 2 + "YesYesYes"
 print(var_int, var_str, var_float, big_int)
 
+# Строки:
+# # 1. Свяжите переменную с любой строкой, состоящей не менее чем из 8 символов.
+# # Извлеките из строки первый символ, затем последний, третий с начала и третий с конца. Измерьте длину вашей строки.
+stroka = "EightSymbols"
 
+# # 2. Присвойте произвольную строку длиной 10-15 символов переменной и извлеките из нее следующие срезы:
+# ● первые восемь символов
+# ● четыре символа из центра строки
+# ● символы с индексами кратными трем
+# ● переверните строку
+str_15_symbols = "Programming"
+print(str_15_symbols[0:8])
+print(str_15_symbols[4:8])
+print(str_15_symbols[0:11:3])
+print(str_15_symbols[-1:-12:-1])
+
+# 3. Есть строка: “my name is name”. Напечатайте ее, но вместо 2ого “name” вставьте ваше имя.
+my_name_string = "my name is Andrei"
+print(my_name_string)
+
+# 4. Есть строка: test_tring = "Hello world!", необходимо
+# ● напечатать на каком месте находится буква w
+# ● кол-во букв l
+# ● Проверить начинается ли строка с подстроки: “Hello”
+# ● Проверить заканчивается ли строка подстрокой: “qwe”
+
+test_tring = "Hello world!"
+print(test_tring.find('w'))
+print(test_tring.count('l'))
+print((test_tring[0:5]) == 'Hello')
+print((test_tring[9:12]) == 'qwe')
