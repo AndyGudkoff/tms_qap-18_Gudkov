@@ -94,3 +94,30 @@ print(result_with_common_element_of_first_and_second_lists)
 list_with_non_unique_values = [1, 2, 3, 4, 3, 2, 5, 1, 4, 6, 7, 1, 8, 2, 3]
 print(list(set(list_with_non_unique_values)))
 
+# Логические операции:
+# 1. Присвойте двум переменным любые числовые значения.
+int1 = 15
+int2 = 2
+
+# 2. Составьте четыре сложных логических выражения с помощью оператора and, два из которых должны давать истину,
+# а два других - ложь.
+print(int1 == 15 and int2 > 1)
+print(int2 != 5 and int1 < 100)
+print(int1 != 15 and int2 < 100)
+print(int2 != 5 and type[int1] == list)
+
+
+# 3. Аналогично выполните п. 2, но уже используя оператор or.
+print(int1 != 15 or int2 > 1)
+print(int2 == 4 or int1 == 10)
+print(int1 != 15 or int2 < 100)
+print(type[int2] == bool or type[int1] == list)
+
+
+# 4. Попробуйте использовать в сложных логических выражениях работу с переменными строкового типа.
+str_for_complex_expression_one = "Python"
+str_for_complex_expression_two = "nohtyP"
+print(str_for_complex_expression_one == str_for_complex_expression_two)
+print(str_for_complex_expression_one != str_for_complex_expression_two)
+print(type(str_for_complex_expression_one) == str and type(str_for_complex_expression_two) == set)
+print(str_for_complex_expression_one.isnumeric() or str_for_complex_expression_two.upper().isupper())
