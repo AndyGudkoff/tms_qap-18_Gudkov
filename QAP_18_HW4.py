@@ -39,13 +39,19 @@ stroka = "EightSymbols"
 # ● переверните строку
 str_15_symbols = "Programming"
 print(str_15_symbols[0:8])
-print(str_15_symbols[4:8])
-print(str_15_symbols[0:11:3])
-print(str_15_symbols[-1:-12:-1])
+str_four_symbols = len(str_15_symbols)
+str_four_symbols = str_15_symbols[str_four_symbols - 2: str_four_symbols + 2]
+print(str_four_symbols)
+print(str_15_symbols[::3])
+print(str_15_symbols[::-1])
 
 # 3. Есть строка: “my name is name”. Напечатайте ее, но вместо 2ого “name” вставьте ваше имя.
-my_name_string = "my name is Andrei"
-print(my_name_string)
+str7 = 'my name is name'
+my_name = 'Andrei'
+str8 = str7.replace('name', my_name,2 )
+str9 = str8.replace('Andrei','name',1 )
+print(str9)
+
 
 # 4. Есть строка: test_tring = "Hello world!", необходимо
 # ● напечатать на каком месте находится буква w
@@ -66,12 +72,12 @@ listochek = [1, 5, 9, 10]
 listochek1 = [2, 10, 15, 20]
 
 # 2. Извлеките из первого списка второй элемент.
-print(listochek[0])
+print(listochek[1])
 
 # 3. Измените во втором списке последний элемент. Выведите список на экран.
 print(listochek1[len(listochek1) - 1])  # Output of the Current last element
-listochek1[len(listochek1) - 1] = 44
-print(listochek1[len(listochek1) - 1])  # Output of the last element after change.
+listochek1[-2]= 44
+print(listochek1[-2])  # Output of the last element after change.
 
 # 4. Соедините оба списка в один, присвоив результат новой переменной. Выведите получившийся список на экран.
 concat_of_two_lists = listochek + listochek1
